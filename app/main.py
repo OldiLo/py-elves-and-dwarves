@@ -1,20 +1,21 @@
-from app.players.dwarves.dwarf_blacksmith import DwarfBlacksmith
-from app.players.dwarves.dwarf_warrior import DwarfWarrior
-from app.players.elves.druid import Druid
-from app.players.elves.elf_ranger import ElfRanger
+from app.players.player import Player
+from app.players.dwarves.dwarf import Dwarf
+from app.players.elves.elf import Elf
 
 
 def calculate_team_total_rating(
-    players: list[DwarfBlacksmith | DwarfWarrior | Druid | ElfRanger],
+    players: list[Player],
 ) -> int:
     return sum(player.get_rating() for player in players)
 
 
-def elves_concert(players: list[Druid | ElfRanger]) -> None:
-    [player.play_elf_song() for player in players]
+def elves_concert(players: list[Elf]) -> None:
+    for player in players:
+        player.play_elf_song()
 
 
 def feast_of_the_dwarves(
-    players: list[DwarfBlacksmith | DwarfWarrior],
+    players: list[Dwarf],
 ) -> None:
-    [player.eat_favourite_dish() for player in players]
+    for player in players:
+        player.eat_favourite_dish()
