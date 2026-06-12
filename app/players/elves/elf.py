@@ -10,6 +10,6 @@ class Elf(Player, ABC):
 
     def play_elf_song(self) -> None:
         print(
-            f"{self.nickname} is playing a song on the"
+            f"{self.nickname} is playing a song on the "
             f"{self._musical_instrument}"
         )
